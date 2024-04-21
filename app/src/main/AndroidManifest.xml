@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
+
+
+    <application
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:icon="@drawable/icon200"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.OvulationCalculator"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="m">
+     
+
+        <activity
+            android:name=".Activities.SplashScreen"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".Activities.EditPeriodActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.DiaryNotesPreviewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.NotesActivity"
+            android:exported="false" />
+        <activity android:name=".Activities.InputActivity" />
+
+        <activity
+            android:name=".Activities.ReadBlogActivity"
+            android:exported="false"
+            android:theme="@style/DefaultFontTheme" />
+        <activity
+            android:name=".Activities.MainActivity"
+            android:exported="true" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+    </application>
+
+</manifest>
